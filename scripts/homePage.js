@@ -55,7 +55,7 @@ async function renderPost(){
         pData.id = "data"
         const dataF = new Date(element.createdAt)
         const dateFormater = Intl.DateTimeFormat("pt-BR", {
-            dateStyle: "long"
+            month: "long", year: "numeric"
         })
         pData.innerText = dateFormater.format(dataF)
 
