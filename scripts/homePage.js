@@ -1,5 +1,5 @@
 import { getLocalStorage } from "./localStorage.js";
-import { getPost, createPost } from "./requests.js"
+import { getPost, createPost, getUser } from "./requests.js"
 import { createNewPostForm, editPostForm, deletePostForm } from "./form.js"
 import openModal from "./modal.js";
 
@@ -13,7 +13,18 @@ function verificarPermissao() {
 
 verificarPermissao()
 
-// console.log(await getPost())
+async function renderUser(){
+    const user =  await getUser()
+    const userImg = document.getElementById("divUserImg")
+
+    const imgUser = document.createElement("img")
+    imgUser.src = user.avatar
+
+    userImg.append(imgUser)
+}
+renderUser()
+
+
 
 async function renderPost(){
     const post = await getPost()

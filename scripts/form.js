@@ -52,7 +52,6 @@ function createNewPostForm(){
 
 }
 
-
 function editPostForm({title, content, id}){
     const formulario = document.createElement("form")
     const h2Form = document.createElement("h2")
@@ -103,8 +102,6 @@ function editPostForm({title, content, id}){
     return formulario
 
 }
-
-
 
 function deletePostForm(id){
     const formulario = document.createElement("form")

@@ -53,8 +53,26 @@ async function register(body) {
 }
 
 async function getUser(){
+    const localStorage = getLocalStorage()
 
+    try{
+        const request = await fetch(baseURL + "users/profile",{
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.token}`
+            }  
+        })
+        const response = await request.json()
+        console.log(response)
+        return response
+        
+    }catch(err){
+        console.log(err)
+    }
 }
+
+getUser()
 
 async function getPost(){
 const localStorage = getLocalStorage()
@@ -144,6 +162,7 @@ async function deletePost(id){
 export { 
     login,
     register,
+    getUser,
     getPost,
     createPost,
     editPost,

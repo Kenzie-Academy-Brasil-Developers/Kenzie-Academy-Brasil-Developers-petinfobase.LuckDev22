@@ -35,7 +35,4 @@ function toast(title, message)  {
 
 }
 
-
-// toast("Sua conta foi criada com sucesso!", "Agora você pode acessar os conteúdos utilizando seu usuário e senha na página de login:")
-
 export default toast
