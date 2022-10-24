@@ -53,7 +53,12 @@ async function renderPost(){
         h3NameUser.innerText = element.user.username
         pDivisor.innerText = "|"
         pData.id = "data"
-        pData.innerText = element.createdAt
+        const dataF = new Date(element.createdAt)
+        const dateFormater = Intl.DateTimeFormat("pt-BR", {
+            dateStyle: "long"
+        })
+        pData.innerText = dateFormater.format(dataF)
+
         buttonEditar.id = "editar"
         buttonEditar.innerText = "Editar"
         buttonEditar.addEventListener("click", ()=>{
