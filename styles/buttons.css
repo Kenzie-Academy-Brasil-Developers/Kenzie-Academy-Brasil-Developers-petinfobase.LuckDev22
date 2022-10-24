@@ -1,0 +1,111 @@
+input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 16px;
+    width: 350px;
+    height: 44px;
+    background: var(--gray800);
+    border: 1px solid var(--gray600);
+    border-radius: 4px;
+    cursor: auto;
+}
+
+#acessar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 16px;
+    width: 350px;
+    height: 38px;
+    background: var(--brand100);
+    border: 1px solid var(--brand100);
+    border-radius: 4px;
+    color: var(--gray900);
+    cursor: pointer;
+}
+
+#cadastrar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 16px;
+    width: 350px;
+    height: 38px;
+    background: var(--brand100);
+    border: 1px solid var(--brand100);
+    border-radius: 4px;
+    color: var(--gray900);
+    cursor: pointer;
+}
+
+
+#voltarLogin {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 8px;
+    border: 1px solid var(--gray600);
+    border-radius: 4px;
+    width: 133px;
+    height: 32px;
+    color: var(--gray100);
+    cursor: pointer;
+}
+
+#voltarParaLogin {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 16px;
+    width: 350px;
+    height: 38px;
+    cursor: pointer;
+    border: 1px solid var(--gray600);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+/* ---------------------------Home Page-------------------------- */
+
+#buttonCriar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 16px;
+    width: 152px;
+    height: 38px;
+    background: var(--brand100);
+    border: 1px solid var(--brand100);
+    border-radius: 4px;
+    color: var(--gray900);
+    cursor: pointer;
+}
+
+#editar {
+    padding: 0px 8px;
+    width: 55px;
+    height: 32px;
+    border: 1px solid var(--gray600);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#excluir {
+    margin-left: 18px;
+    padding: 0px 8px;
+    width: 60px;
+    height: 32px;
+    border: 1px solid var(--gray700);
+    border-radius: 4px;
+    background: var(--gray700);
+    color: var(--gray400);
+    cursor: pointer;
+}

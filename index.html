@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/globalStyles.css">
+    <link rel="stylesheet" href="./styles/sections.css">
+    <link rel="stylesheet" href="./styles/buttons.css">
+    <link rel="stylesheet" href="./styles/text.css">
+    <title>Petinfo - Login</title>
+</head>
+<body>
+    <main>
+        <section id="infos">
+            <div>
+                <h1>Petinfo</h1>
+                <h2><span>Amor</span> e <span>carinho</span> por meio do conhecimento</h2>
+                <p>Todas as informações para melhorar a vida do seu pet em um só lugar</p>
+                <img src="/img/img-login.jpg" alt="imagem Login">
+            </div>
+        </section>
+        <section id="login">
+            <div id="divForm">
+                <h3 id="titleLogin">Login</h3>
+                <form>
+                    <div>
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" placeholder="Seu e-mail aqui">
+                    </div>
+                    <div>
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" placeholder="Digite sua senha">
+                        <div id="verificarLogin">
+                        </div>
+                    </div>
+                    <button id="acessar" type="submit">Acessar</button>
+                </form>            
+            </div>
+                <h3>Ainda não possui conta?</h3>
+                <p>Clicando no botão abaixo, você pode se cadastrar rapidamente</p>
+                <a href="/pages/register.html">Cadastrar</a>
+        </section>
+    </main>
+    <script type="module" src="/scripts/login.js"></script>
+</body>
+</html>
