@@ -99,9 +99,53 @@ async function createPost(body){
 
 }
 
+async function editPost(body, id){
+    const localStorage = getLocalStorage()
+
+    try{
+        const request = await fetch(baseURL + "posts/"+ id,{
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.token}`
+            },
+            body: JSON.stringify(body)
+        })
+        const response = await request.json()
+
+        return response
+    }catch (err){
+        console.log(err)
+    }
+
+}
+
+
+async function deletePost(id){
+    const localStorage = getLocalStorage()
+
+    try{
+        const request = await fetch(baseURL + "posts/"+ id,{
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.token}`
+            }
+        })
+        const response = await request.json()
+
+        return response
+    }catch (err){
+        console.log(err)
+    }
+
+}
+
 export { 
     login,
     register,
     getPost,
-    createPost
+    createPost,
+    editPost,
+    deletePost
 }

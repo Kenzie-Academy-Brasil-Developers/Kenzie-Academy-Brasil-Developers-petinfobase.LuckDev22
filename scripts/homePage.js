@@ -1,6 +1,6 @@
 import { getLocalStorage } from "./localStorage.js";
 import { getPost, createPost } from "./requests.js"
-import { createNewPostForm } from "./form.js"
+import { createNewPostForm, editPostForm, deletePostForm } from "./form.js"
 import openModal from "./modal.js";
 
 function verificarPermissao() {
@@ -45,8 +45,18 @@ async function renderPost(){
         pData.innerText = element.createdAt
         buttonEditar.id = "editar"
         buttonEditar.innerText = "Editar"
+        buttonEditar.addEventListener("click", ()=>{
+            const formEdit = editPostForm(element)
+            openModal(formEdit)
+        })
+
         buttonExcluir.id = "excluir"
         buttonExcluir.innerText = "Excluir"
+        buttonExcluir.addEventListener("click", ()=>{
+            const formDel = deletePostForm(element.id)
+            console.log(element.id)
+            openModal(formDel)
+        })
         divFeed.id = "postFeed"
         h2title.id = "titlePost"
         h2title.innerText = element.title
