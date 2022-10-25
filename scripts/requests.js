@@ -1,4 +1,4 @@
-import { verificarLogin, buttonDisable} from "./verificarLogin.js"
+import { verificarLogin, buttonDisable } from "./verificarLogin.js"
 import { getLocalStorage } from "./localStorage.js"
 import toast from "./toast.js"
 

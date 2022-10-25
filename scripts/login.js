@@ -1,4 +1,5 @@
 import { login } from "./requests.js"
+import { buttonDisable } from "./verificarLogin.js"
 
 function eventLogin() {
     const form = document.querySelector("form")
@@ -20,7 +21,7 @@ function eventLogin() {
 
 eventLogin()
 
-
+buttonDisable()
 
 
 

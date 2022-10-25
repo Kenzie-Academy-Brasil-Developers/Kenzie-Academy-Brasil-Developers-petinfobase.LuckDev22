@@ -17,12 +17,13 @@ function buttonDisable() {
     const inputPassword = document.getElementById("password")
     const buttonAcessar = document.getElementById("acessar")
 
-    // inputUser.addEventListener('input', (event) => {
-    //     event.preventDefault()
-    //     buttonAcessar.disabled = false
-    // })
-
-
+console.log(inputUser)
+inputPassword.addEventListener('input', (event) => {
+        if(inputUser.value.length && inputPassword.value.length){
+            event.preventDefault()
+            buttonAcessar.disabled = false
+        }     
+    })
 
     buttonAcessar.addEventListener("click", () => {
         buttonAcessar.innerText = ""
