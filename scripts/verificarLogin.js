@@ -12,4 +12,34 @@ function verificarLogin(title) {
     
 }
 
+function buttonDisable() {
+    const inputUser = document.getElementById("email")
+    const inputPassword = document.getElementById("password")
+    const buttonAcessar = document.getElementById("acessar")
+
+    // inputUser.addEventListener('input', (event) => {
+    //     event.preventDefault()
+    //     buttonAcessar.disabled = false
+    // })
+
+
+
+    buttonAcessar.addEventListener("click", () => {
+        buttonAcessar.innerText = ""
+        const imgLoading = document.createElement("img")
+        imgLoading.src = "../img/spinner.png"
+        imgLoading.classList.add("imgLoading")
+        buttonAcessar.append(imgLoading)
+    })
+}
+
+
+
+export {
+    buttonDisable,
+    verificarLogin
+}
+
 export default verificarLogin
+
+

@@ -13,6 +13,7 @@ function verificarPermissao() {
 
 verificarPermissao()
 
+
 async function renderUser(){
     const user =  await getUser()
     const userImg = document.getElementById("divUserImg")
@@ -22,8 +23,8 @@ async function renderUser(){
 
     userImg.append(imgUser)
 }
-renderUser()
 
+renderUser()
 
 
 async function renderPost(){

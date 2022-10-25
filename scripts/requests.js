@@ -1,4 +1,4 @@
-import verificarLogin from "./verificarLogin.js"
+import { verificarLogin, buttonDisable} from "./verificarLogin.js"
 import { getLocalStorage } from "./localStorage.js"
 import toast from "./toast.js"
 
@@ -13,17 +13,16 @@ async function login(body){
             },
             body: JSON.stringify(body)
         })
-console.log(request)
-        if(request.ok == true){
+        buttonDisable()
+        if(request.ok){
             const response = await request.json()
-
             localStorage.setItem("user", JSON.stringify(response))
-
             setTimeout(() =>{
             window.location.replace("../pages/homePage.html")
         },4000)
         } else {
             verificarLogin("Email ou Senha incorreto!")
+
         }
 
     }catch (err){
