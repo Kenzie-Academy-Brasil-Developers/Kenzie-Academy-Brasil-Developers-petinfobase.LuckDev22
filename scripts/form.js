@@ -35,7 +35,7 @@ function createNewPostForm(){
     formulario.append(h2Form, labelTitlePost, inputTitlePost, labelConteudoPost, inputConteudoPost, buttonAddNewPost)
 
     formulario.addEventListener("submit", async (event)=>{
-        event.preventDefault()
+        // event.preventDefault()
     
         const inputs = [...event.target]
         const newPost = {}
@@ -47,7 +47,7 @@ function createNewPostForm(){
 
         })
         await createPost(newPost)
-        await renderPost()
+        // await renderPost()
     })
 
     return formulario
@@ -129,10 +129,10 @@ function deletePostForm(id){
     formulario.append(h2Form, h2Confirme, pActionDel, divButtons)
     
     formulario.addEventListener("submit", async (e)=>{
-        e.preventDefault()
+        
         toast("Post deletado com sucesso!", "O post selecionado para exlusão foi deletado, a partir de agora não aparecerá no seu feed", "")
         await deletePost(id)
-        await renderPost()
+        
     })
 
     return formulario
