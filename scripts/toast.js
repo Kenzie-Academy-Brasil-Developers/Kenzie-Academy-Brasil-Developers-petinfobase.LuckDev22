@@ -1,4 +1,4 @@
-function toast(title, message)  { 
+function toast(title, message, login)  { 
     const body = document.querySelector("body")
 
     const container = document.createElement("div")
@@ -9,7 +9,7 @@ function toast(title, message)  {
 
     const aLogin = document.createElement("a")
     aLogin.href = "../index.html"
-    aLogin.innerText = " Acessar página de login"
+    aLogin.innerText = `${login}`
     aLogin.classList = "acessarPagina"
 
     if (title == "Sua conta foi criada com sucesso!") {
@@ -34,5 +34,6 @@ function toast(title, message)  {
     body.appendChild(container)
 
 }
+
 
 export default toast

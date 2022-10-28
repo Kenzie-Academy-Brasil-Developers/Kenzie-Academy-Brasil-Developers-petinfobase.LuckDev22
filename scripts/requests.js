@@ -1,4 +1,4 @@
-import { verificarLogin, buttonDisable } from "./verificarLogin.js"
+import { verificarLogin, buttonDisable, buttonDisableRegister } from "./verificarLogin.js"
 import { getLocalStorage } from "./localStorage.js"
 import toast from "./toast.js"
 
@@ -18,11 +18,10 @@ async function login(body){
             const response = await request.json()
             localStorage.setItem("user", JSON.stringify(response))
             setTimeout(() =>{
-            window.location.replace("../pages/homePage.html")
+            window.location.assign("../pages/homePage.html")
         },4000)
         } else {
             verificarLogin("Email ou Senha incorreto!")
-
         }
 
     }catch (err){
@@ -39,15 +38,15 @@ async function register(body) {
             },
             body: JSON.stringify(body)
             })
-
+            buttonDisableRegister()
             if(request.ok == true){
-                toast("Sua conta foi criada com sucesso!", "Agora você pode acessar os conteúdos utilizando seu usuário e senha na página de login:")
+                toast("Sua conta foi criada com sucesso!", "Agora você pode acessar os conteúdos utilizando seu usuário e senha na página de login:", "Acessar pagina de login")
             }
             setTimeout(() =>{
-                window.location.replace("/index.html")
+                window.location.assign("/index.html")
             },4000)
     }catch (err) {
-        toast("Errooooooo", "email ou usuario cadastrado")
+        toast("Errooooooo", "email ou usuario cadastrado", " ")
     }
 }
 
@@ -62,8 +61,7 @@ async function getUser(){
                 "Authorization": `Bearer ${localStorage.token}`
             }  
         })
-        const response = await request.json()
-        console.log(response)
+        const response = await request.json()    
         return response
         
     }catch(err){
@@ -150,13 +148,13 @@ async function deletePost(id){
             }
         })
         const response = await request.json()
-
         return response
     }catch (err){
         console.log(err)
     }
 
 }
+
 
 export { 
     login,

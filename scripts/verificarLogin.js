@@ -17,7 +17,6 @@ function buttonDisable() {
     const inputPassword = document.getElementById("password")
     const buttonAcessar = document.getElementById("acessar")
 
-console.log(inputUser)
 inputPassword.addEventListener('input', (event) => {
         if(inputUser.value.length && inputPassword.value.length){
             event.preventDefault()
@@ -36,9 +35,35 @@ inputPassword.addEventListener('input', (event) => {
 
 
 
+function buttonDisableRegister() {
+    const inputUser = document.getElementById("username")
+    const inputEmail = document.getElementById("email")
+    const inputPassword = document.getElementById("password")
+
+    const buttonCadastrar = document.getElementById("cadastrar")
+
+inputPassword.addEventListener('input', (event) => {
+        if(inputUser.value.length && inputPassword.value.length && inputEmail.value.length){
+            event.preventDefault()
+            buttonCadastrar.disabled = false
+        }     
+    })
+
+    buttonCadastrar.addEventListener("click", () => {
+        buttonCadastrar.innerText = ""
+        const imgLoading = document.createElement("img")
+        imgLoading.src = "../img/spinner.png"
+        imgLoading.classList.add("imgLoading")
+        buttonCadastrar.append(imgLoading)
+    })
+}
+
+
+
 export {
     buttonDisable,
-    verificarLogin
+    verificarLogin,
+    buttonDisableRegister
 }
 
 export default verificarLogin

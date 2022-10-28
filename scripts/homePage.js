@@ -30,7 +30,7 @@ renderUser()
 async function renderPost(){
     const post = await getPost()
     const sectionRenderPost = document.getElementById("sectionFeed")
-
+    
     post.forEach(element => {
         const divMain         = document.createElement("div")
         const divPost         = document.createElement("div")
@@ -47,6 +47,7 @@ async function renderPost(){
         const h3Description   = document.createElement("h3")
         const aHref           = document.createElement("a")
 
+        divMain.id = "divmain"
         divPost.id = "postUser"
         divImg.id = "userImg"
         imgUser.src = element.user.avatar
@@ -82,6 +83,11 @@ async function renderPost(){
         aHref.id = "acessarFeed"
         aHref.innerText = "Acessar publicação"
 
+        aHref.addEventListener("click", ()=>{
+            console.log(element)
+            openModal(divMain)
+        })
+
         divMain.append(divPost, divFeed)
         divPost.append(divImg, divButtons)
         divImg.append(imgUser, h3NameUser, pDivisor, pData)
@@ -90,6 +96,7 @@ async function renderPost(){
         sectionRenderPost.append(divMain)
 
     });
+
 }
 
 renderPost()

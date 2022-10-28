@@ -1,6 +1,7 @@
 import { createPost, editPost, deletePost } from "./requests.js"
 import { renderPost } from "./homePage.js"
 import openModal from "./modal.js"
+import toast from "./toast.js"
 
 function createNewPostForm(){
     const formulario = document.createElement("form")
@@ -11,6 +12,7 @@ function createNewPostForm(){
     const inputConteudoPost = document.createElement("input")
     const buttonAddNewPost = document.createElement("button")
 
+    formulario.innerHTML = ""
     h2Form.innerText = "Criando novo post"
     labelTitlePost.for = "title"
     labelTitlePost.innerText = "Título do post"
@@ -53,6 +55,7 @@ function createNewPostForm(){
 }
 
 function editPostForm({title, content, id}){
+
     const formulario = document.createElement("form")
     const h2Form = document.createElement("h2")
     const labelTitlePost = document.createElement("label")
@@ -61,6 +64,7 @@ function editPostForm({title, content, id}){
     const inputConteudoPost = document.createElement("input")
     const buttonAddNewPost = document.createElement("button")
 
+    formulario.innerHTML = ""
     h2Form.innerText = "Editar post"
     labelTitlePost.for = "title"
     labelTitlePost.innerText = "Título do post"
@@ -124,8 +128,9 @@ function deletePostForm(id){
     divButtons.append(buttonCancel, buttonConfirmeDel)
     formulario.append(h2Form, h2Confirme, pActionDel, divButtons)
     
-    formulario.addEventListener("submit", async ()=>{
-        
+    formulario.addEventListener("submit", async (e)=>{
+        e.preventDefault()
+        toast("Post deletado com sucesso!", "O post selecionado para exlusão foi deletado, a partir de agora não aparecerá no seu feed", "")
         await deletePost(id)
         await renderPost()
     })

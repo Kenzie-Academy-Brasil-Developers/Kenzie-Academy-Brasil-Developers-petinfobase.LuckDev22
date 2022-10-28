@@ -23,11 +23,3 @@ eventLogin()
 
 buttonDisable()
 
-
-
-// const user =  {
-// 	email: "rafael@kenzie.com.br",
-// 	password: "123456"
-// }
-
-// console.log(await login(user))
